@@ -4,11 +4,7 @@ const app = express()
 const portNumber = process.env.PORT || '8000'
 
 app.listen(portNumber, () => {
-<<<<<<< HEAD
   console.log('listening in on port ${portNumber}')
-=======
-  console.log("listening in on port ${ portNumber }")
->>>>>>> 2ac2e0d6f0f9aa737187d07efa3eecda8e032780
 });
 
 app.get('/', (req,res) => {
