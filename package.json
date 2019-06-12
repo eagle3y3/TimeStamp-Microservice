@@ -6,11 +6,14 @@
   "scripts": {
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "echo 'hello build'"
   },
   "author": "Lester Hairston",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "npm": "^6.9.0",
+    "webpack": "^4.33.0"
   }
 }
