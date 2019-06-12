@@ -1,10 +1,11 @@
 const express = require('express')
 
 const app = express()
+
 const portNumber = process.env.PORT || '8000'
 
 app.listen(portNumber, () => {
-  console.log('listening in on port ${portNumber}')
+  console.log(`listening in on port ${portNumber}`)
 });
 
 app.get('/', (req,res) => {
