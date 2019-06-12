@@ -7,8 +7,8 @@ app.listen('8000', () => {
 });
 
 app.get('/', (req,res) => {
-  res.send('Timestamp Microserce works!');
-})
+  res.sendFile('views/index.html', { root: __dirname });
+});
 
 app.get('/api/timestamp/:date_string?', (req, res) => {
   const dateString = req.params.date_string;
@@ -23,7 +23,7 @@ app.get('/api/timestamp/:date_string?', (req, res) => {
     if(!isNaN(dateString)) {
       date = new Date(parseInt(dateString))
     } else {
-    date = new Date({ dateString })
+    date = new Date(dateString)
     }
   }
   /*
@@ -37,6 +37,8 @@ app.get('/api/timestamp/:date_string?', (req, res) => {
   if (date.toString() === "Invalid Date") {
     res.json({ "error": "Invalid Date" })
   } else {
-    res.json({ "unix": date.getTime(), "utc": date.toUTCString() })
+    res.json({ unix : date.getTime(), utc : date.toUTCString() })
   }
 });
+
+app.use('/public', express.static('public'));
